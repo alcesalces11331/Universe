@@ -2,6 +2,8 @@ class Universe
 	# Here we will instantiate the universe. Welcome to the Matrix.
 	class Life
 		class Terrestrial 
+			class Human
+			end
 		end
 
 		class Extra_Terrestrial
