@@ -3,28 +3,27 @@ class Universe
 	class Life
 		class Terrestrial 
 			class Human
-				attr_accessor :career
-				attr_reader :first_name, :last_name, :middle_name, :city, :birthday, :existential, :status, :sex, :gender, :sexual_orientation
+				attr_accessor :career, :city, :birthday, :existential, :status, :gender, :sexual_orientation
+				attr_reader :age, :sex, :name 
 
 				@@total_humans = 0
 				@@existential_attitudes = []
-				@@cities = []
-				@@careers = []
-				@@
+				@@nations = []
+				@@epoch_technological = []
+				@@who_they_are = []
+				@@people = []
 
 
-				def initialize(first_name, last_name, middle_name, city, birthday, existential, sex, gender, sexual_orientation)
+				def initialize(name, age, sex, nation, epoch)
 					@@total_humans += 1
-					@first_name = first_name
-					@last_name = last_name
-					@middle_name = middle_name
-					@city = city
-					@birthday = birthday
-					@existential = existential 
-					@@existential_attitudes << @existential
+					@name = name
+					@@people << name
+					@age = age 
 					@sex = sex 
-					@gender = gender
-					@sexual_orientation = sexual_orientation
+					@nation = nation
+					@@nations << @nation 
+					@epoch = epoch 
+					@@epoch_technological << @epoch
 				end
 
 				def existential_prediliction(existential)
@@ -35,9 +34,16 @@ class Universe
 					@status = status
 				end
 
-				def career(career)
-					@career = career
-					@@career << career if !@@career.include?(career)
+				def nations
+					@@nations.uniq
+				end
+
+				def epochs
+					@@epoch_technological.uniq
+				end
+
+				def persons
+					@@people
 				end
 			end
 		end
